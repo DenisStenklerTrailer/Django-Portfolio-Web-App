@@ -1,18 +1,41 @@
 {% extends 'basic.html' %}
 
 {% block title %} Sign-Up {% endblock title %}
-
+{% block style_css %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+{% endblock style_css %}
 {% block body %}
-    <div class="container mt-4"></div>
+<div class="container mt-4 p-2">
 
     <div class="row">
         <div class="col-md-4"></div>
-        <div class="col-md-4">
-            <h3 class="text-white bg-dark text-center p-3">SignUp here</h3>
-        </div>
+            <div class="col-md-4">
+                <h3 class="text-white bg-dark text-center p-3">SignUp here</h3>
+
+                <div class="card p-2">
+                    <form action="" method="post">
+                        <div class="form-group">
+                            <h5><span><i class="bx bx-envelope"></i> Email</span></h5>
+                            <input type="text" class="form-control mb-3">
+                        </div>
+                        <div class="form-group">
+                            <h5><span><i class="fa-solid fa-key"></i> Password</span></h5>
+                            <input type="password" class="form-control mb-3">
+                        </div>
+                        <div class="form-group">
+                            <h5><span><i class="fa-solid fa-lock"></i> Submit</span></h5>
+                            <input type="password" class="form-control mb-3">
+                        </div>
+                        <div class="d-grid gap-2">
+                            <button class="btn btn-dark" type="submit">Button</button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
         <div class="col-md-4"></div>
 
     </div>
-
+</div>
 
 {% endblock body %}
