@@ -43,7 +43,7 @@
 
       <div class="profile">
         <img src="{% static 'assets/img/profile-img.jpg' %}" alt="" class="img-fluid rounded-circle">
-        <h1 class="text-light"><a href="index.html">Alex Smith</a></h1>
+        <h1 class="text-light"><a href="index.html">Welcome {{user.username}}</a></h1>
         <div class="social-links mt-3 text-center">
           <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
           <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
@@ -60,9 +60,14 @@
           <!--<li><a href="#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li> -->
           <!--<li><a href="/services" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Services</span></a></li> -->
           <li><a href="/contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
+
+          {% if not request.user.is_authenticated %}
           <li><a href="/auth/signup" class="nav-link scrollto"><i class="bx bx-user"></i> <span>Sign up</span></a></li>
           <li><a href="/auth/login" class="nav-link scrollto"><i class="bx bx-user"></i> <span>Login</span></a></li>
+          {% else %}
           <li><a href="/auth/logout" class="nav-link scrollto"><i class="bx bx-user"></i> <span>Logout</span></a></li>
+          {% endif %}
+          
         </ul>
       </nav><!-- .nav-menu -->
     </div>
