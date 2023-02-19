@@ -30,7 +30,20 @@ def signup(request):
 
     return render(request,'signup.html')
 
+@csrf_exempt
 def handleLogin(request):
+    if request.method == "POST":
+        get_email = request.POST.get('email')
+        get_password = request.POST.get('pass1')
+        myuser = authenticate(username=get_email, password=get_password)
+
+        if myuser is not None:
+            login(request, myuser)
+            messages.success(request, "Login success")
+            return redirect('/')
+        else:
+            messages.error(request, "Wrong username or password")
+
     return render(request,'login.html')
 
 def handleLogout(request):
